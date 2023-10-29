@@ -10,7 +10,7 @@ namespace LABA_2.Task_2.Classes
     public class Clock : Goods
     {
         string name = "Clock";
-        decimal price = 0.0M;
+        decimal price = 500.0M;
         int quality = 100;
         ClockType type = ClockType.Wristwatches;
         List<string> features = new();
@@ -64,33 +64,21 @@ namespace LABA_2.Task_2.Classes
             ChangeFeatures(features);
         }
 
-        public override void ChangeName(string _name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ChangePrice(decimal _price)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ChangeQuality(int _quality)
-        {
-            throw new NotImplementedException();
-        }
-        public override string ToString()
-        {
-            string s = null;
-            foreach(var item in Features)
-                s += item + " ";
-            return "Clock: \n Name: " + Name + "\n Price: " + Price + "\n Quality: " + Quality + "\n Type: " + Type + "\n Features: " + s;
-        }
-
+        public override void ChangeName(string _name) => Name = String.IsNullOrWhiteSpace(_name) ? "Clock" : _name;
+        public override void ChangePrice(decimal _price) => Price = (_price < 500 || _price > 500000) ? 500 : _price;
+        public override void ChangeQuality(int _quality) => Quality = (_quality < 0 || _quality > 100) ? 100 : _quality;
         public void ChangeClockType(int num) => type = (ClockType)(num % 3);
         public void ChangeFeatures(params string[] feat)
         {
             foreach (var item in feat)
                 Features.Add(item);
+        }
+        public override string ToString()
+        {
+            string s = null;
+            foreach (var item in Features)
+                s += item + " ";
+            return "Clock: \n Name: " + Name + "\n Price: " + Price + "\n Quality: " + Quality + "\n Type: " + Type + "\n Features: " + s;
         }
 
     }

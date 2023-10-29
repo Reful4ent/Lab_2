@@ -46,7 +46,7 @@ namespace LABA_2
 
             Clock clock= new Clock("ПИДОРАС",12000.00M,50,2,"OLPAKA","TORTIK","POPASIK","ЭССТРАЙХ");
             Console.WriteLine(clock.ToString());
-            
+           
         }
     }
 }
