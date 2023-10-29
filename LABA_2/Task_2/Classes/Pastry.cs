@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace LABA_2.Task_2.Classes
 {
-    internal class Pastry
+    public abstract class Pastry : Product
     {
+
     }
 }

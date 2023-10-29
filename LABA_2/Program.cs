@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using LABA_2.Task_1;
 using LABA_2.Task_2.Classes;
+using LABA_2.Task_2.Enums;
 
 namespace LABA_2
 {
@@ -42,6 +43,12 @@ namespace LABA_2
             int u = e.CheckIndex();
             int j = x.CheckIndex();
             Console.WriteLine("s : {0}, e: {1}, x : {2}",y ,u,j);
+
+            Goods l = new();
+            l.Quality = 70;
+            l.Name = "23423";
+            l.Price = 123;
+            Console.WriteLine(l.ToString());
         }
     }
 }

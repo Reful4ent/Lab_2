@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LABA_2.Task_2.Classes
+namespace LABA_2.Task_2.Enums
 {
-    public abstract class Product
+    public enum ClockType
     {
-
+        Wristwatches,
+        Wall_clock,
+        Table_clock
     }
 }
