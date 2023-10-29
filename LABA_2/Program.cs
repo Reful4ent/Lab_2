@@ -44,11 +44,9 @@ namespace LABA_2
             int j = x.CheckIndex();
             Console.WriteLine("s : {0}, e: {1}, x : {2}",y ,u,j);
 
-            Goods l = new();
-            l.Quality = 70;
-            l.Name = "23423";
-            l.Price = 123;
-            Console.WriteLine(l.ToString());
+            Clock clock= new Clock("ПИДОРАС",12000.00M,50,2,"OLPAKA","TORTIK","POPASIK","ЭССТРАЙХ");
+            Console.WriteLine(clock.ToString());
+            
         }
     }
 }
