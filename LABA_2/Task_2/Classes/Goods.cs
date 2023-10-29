@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LABA_2.Task_2
+namespace LABA_2.Task_2.Classes
 {
-    internal class Cake
+    internal class Goods
     {
     }
 }
