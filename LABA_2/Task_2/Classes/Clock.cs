@@ -12,7 +12,7 @@ namespace LABA_2.Task_2.Classes
         string name = "Clock";
         decimal price = 500.0M;
         int quality = 100;
-        ClockType type = ClockType.Wristwatches;
+        ClockType clockType = ClockType.Wristwatches;
         List<string> features = new();
         public override string Name 
         {
@@ -42,10 +42,10 @@ namespace LABA_2.Task_2.Classes
             }
         }
 
-        public ClockType Type 
+        public ClockType CType 
         {
-            get => type;
-            set => type = value;
+            get => clockType;
+            set => clockType = value;
         }
 
         public List<string> Features
@@ -55,19 +55,16 @@ namespace LABA_2.Task_2.Classes
 
         public Clock() {; }
 
-        public Clock(string name, decimal price, int quality, int type, params string[] features)
+        public Clock(string name, decimal price, int quality, int type, params string[] features) : base(name, price, quality)
         {
-            Name = name;
-            Price = price;
-            Quality = quality;
-            Type = (ClockType)((type) % 3);
+            CType = (ClockType)((type) % 3);
             ChangeFeatures(features);
         }
 
         public override void ChangeName(string _name) => Name = String.IsNullOrWhiteSpace(_name) ? "Clock" : _name;
         public override void ChangePrice(decimal _price) => Price = (_price < 500 || _price > 500000) ? 500 : _price;
         public override void ChangeQuality(int _quality) => Quality = (_quality < 0 || _quality > 100) ? 100 : _quality;
-        public void ChangeClockType(int num) => type = (ClockType)(num % 3);
+        public void ChangeClockType(int num) => clockType = (ClockType)(num % 3);
         public void ChangeFeatures(params string[] feat)
         {
             foreach (var item in feat)
@@ -78,7 +75,7 @@ namespace LABA_2.Task_2.Classes
             string s = null;
             foreach (var item in Features)
                 s += item + " ";
-            return "Clock: \n Name: " + Name + "\n Price: " + Price + "\n Quality: " + Quality + "\n Type: " + Type + "\n Features: " + s;
+            return "Clock: \n"+ base.ToString() + "\n Type: " + CType + "\n Features: " + s;
         }
 
     }

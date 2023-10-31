@@ -59,14 +59,10 @@ namespace LABA_2.Task_2.Classes
         }
         
         public Flower() {; }
-        public Flower(string name, decimal price, int quality, int color, string wrapper)
+        public Flower(string name, decimal price, int quality, int color, string wrapper):base(name,price,quality)
         {
-            Name = name;
-            Price = price;
-            Quality = quality;
             Color = (Color)((color) % 3);
             Wrapper = wrapper;
-     
         }
 
         public override void ChangeName(string _name) => Name = String.IsNullOrWhiteSpace(_name) ? "Flower" : _name;
@@ -74,6 +70,6 @@ namespace LABA_2.Task_2.Classes
         public override void ChangeQuality(int _quality) => Quality = (_quality < 0 || _quality > 100) ? 100 : _quality;
         public void ChangeColor(int num) => color = (Color)(num % 3);
         public void ChangeWrapper(string _wrapper) => Wrapper = String.IsNullOrWhiteSpace(_wrapper) ? "Without wrapper" : _wrapper;
-        public override string ToString() => "Flower: \n Name: " + Name + "\n Price: " + Price + "\n Quality: " + Quality + "\n Color: " + Color + "\n Wrapper: " + Wrapper;
+        public override string ToString() => "Flower: \n" + base.ToString() + "\n Color: " + Color + "\n Wrapper: " + Wrapper;
     }
 }

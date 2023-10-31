@@ -46,7 +46,8 @@ namespace LABA_2
 
             Clock clock= new Clock("ПИДОРАС",12000.00M,50,2,"OLPAKA","TORTIK","POPASIK","ЭССТРАЙХ");
             Console.WriteLine(clock.ToString());
-           
+            Flower flower = new Flower("Роза", 5000.00M, 50, 1, "Пакет");
+            Console.WriteLine(flower.ToString());
         }
     }
 }
