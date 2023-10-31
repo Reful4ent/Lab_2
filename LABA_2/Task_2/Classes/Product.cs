@@ -15,6 +15,14 @@ namespace LABA_2.Task_2.Classes
         public abstract void ChangePrice(decimal _price);
         public abstract void ChangeShelfLife(int _shelfLife);
         public abstract void ChangeQuality(int _quality);
-        public override string ToString() => " Price:" + Price + " \n Shelflife: " + ShelfLife + " \n Quality: " + Quality;
+        protected Product() {; }
+        protected Product(decimal price, int shelfLife, int quality)
+        {
+            Price = price;
+            ShelfLife = shelfLife;
+            Quality = quality;
+        }
+
+        public override string ToString() => "\n Price:" + Price + " \n Shelflife: " + ShelfLife + " \n Quality: " + Quality;
     }
 }

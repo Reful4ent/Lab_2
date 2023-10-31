@@ -48,6 +48,8 @@ namespace LABA_2
             Console.WriteLine(clock.ToString());
             Flower flower = new Flower("Роза", 5000.00M, 50, 1, "Пакет");
             Console.WriteLine(flower.ToString());
+            Cake cake = new Cake();
+            Console.WriteLine(cake.ToString());
         }
     }
 }

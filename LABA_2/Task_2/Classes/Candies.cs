@@ -9,53 +9,54 @@ namespace LABA_2.Task_2.Classes
 {
     public class Candies : Pastry
     {
-        public override string DietaryType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override uint ProcOfSugar { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override int Calories { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override PastryType PType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override uint EnergyValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override decimal Price { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override int ShelfLife { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override int Quality { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public CandyType CandyType { get; set; }
+        public override string DietaryType { get; set; }
+        public override uint ProcOfSugar { get; set; }
+        public override int Calories { get; set; }
+        public override PastryType PastryType { get; set; }
+        public override uint EnergyValue { get; set; }
+        public override decimal Price { get; set; }
+        public override int ShelfLife { get; set; }
+        public override int Quality { get; set; }
 
         public override void ChangeCalories(int _calories)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void ChangeDietaryType(string _dietaryType)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void ChangeEnergyValue(uint _energyValue)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void ChangePrice(decimal _price)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void ChangeProcOfSugar(uint _procOfSugar)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void ChangePType(int num)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void ChangeQuality(int _quality)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void ChangeShelfLife(int _shelfLife)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

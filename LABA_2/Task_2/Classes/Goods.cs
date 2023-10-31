@@ -11,8 +11,8 @@ namespace LABA_2.Task_2.Classes
         public abstract string Name { get; set; }
         public abstract decimal Price { get; set; }
         public abstract int Quality { get; set; }
-        public Goods() {; }
-        public Goods(string name, decimal price, int quality)
+        protected Goods() {; }
+        protected Goods(string name, decimal price, int quality)
         {
             Name = name;
             Price = price;

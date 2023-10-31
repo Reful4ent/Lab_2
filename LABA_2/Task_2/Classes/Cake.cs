@@ -9,54 +9,110 @@ namespace LABA_2.Task_2.Classes
 {
     public sealed class Cake : Pastry
     {
-        public CakeType CakeType { get; set; }
-        public override string DietaryType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override uint ProcOfSugar { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override int Calories { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override PastryType PType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override uint EnergyValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override decimal Price { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override int ShelfLife { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override int Quality { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        CakeType name = CakeType.Prague;
+        string deitaryType = "Не диетический";
+        uint procOfSugar = 60;
+        int calories = 500;
+        PastryType pastryType = PastryType.Cake;
+        uint energyValue = 2000;
+        decimal price = 500.00M;
+        int shelfLife = 2;
+        int quality = 100;
+
+        public CakeType Name
+        {
+            get => name;
+            set => name = value;
+        }
+        public override string DietaryType 
+        {
+            get => deitaryType;
+            set => deitaryType=value;
+        }
+        public override uint ProcOfSugar
+        {
+            get => procOfSugar;
+            set=> procOfSugar=value;
+        }
+        public override int Calories
+        {
+            get => calories;
+            set => calories=value;
+        }
+        public override PastryType PastryType
+        {
+            get => pastryType;
+            set => pastryType = value;
+        }
+        public override uint EnergyValue
+        {
+            get => energyValue;
+            set => energyValue = value;
+        }
+        public override decimal Price
+        {
+            get => price;
+            set=> price= value;
+        }
+        public override int ShelfLife
+        {
+            get => shelfLife;
+            set => shelfLife = value;
+        }
+        public override int Quality
+        {
+            get => quality;
+            set => quality = value;
+        }
+
+        public Cake() {; }
+        public Cake(int name, decimal price, int shelfLife, int quality, string deitaryType, uint procOfSugar, int calories, int pType, uint energyValue) : base(price, shelfLife, quality, deitaryType, procOfSugar, calories, pType, energyValue)
+        {
+            Name = (CakeType)(name % 6);
+        }
 
         public override void ChangeCalories(int _calories)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void ChangeDietaryType(string _dietaryType)
         {
-            throw new NotImplementedException();
+           
         }
 
         public override void ChangeEnergyValue(uint _energyValue)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void ChangePrice(decimal _price)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void ChangeProcOfSugar(uint _procOfSugar)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void ChangePType(int num)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void ChangeQuality(int _quality)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void ChangeShelfLife(int _shelfLife)
         {
-            throw new NotImplementedException();
+            
+        }
+        public override string ToString()
+        {
+            return "Pastry: \n" + " Name: " + Name + base.ToString();
         }
     }
 
