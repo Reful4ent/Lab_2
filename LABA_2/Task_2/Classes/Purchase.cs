@@ -7,35 +7,18 @@ using System.Threading.Tasks;
 
 namespace LABA_2.Task_2.Classes
 {
-    public class Purchase : IEnumerable<Purchase>, IEnumerator<Purchase>
+    public class Purchase : IEnumerable<Goods>,IEnumerable<Product>
     {
-        public Purchase Current => throw new NotImplementedException();
+        List<Goods> goodsList=new();
+        List<Product> productList=new();
+        public Purchase() {; }
+        
+        public void AddGoods(Goods p) => goodsList.Add(p);
+        public void AddProduct(Product p) => productList.Add(p);
+        public IEnumerator<Goods> GetEnumerator() => goodsList.GetEnumerator();
+        IEnumerator<Product> IEnumerable<Product>.GetEnumerator()=> productList.GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() =>GetEnumerator();
 
-        object IEnumerator.Current => throw new NotImplementedException();
-
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerator<Purchase> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool MoveNext()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Reset()
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

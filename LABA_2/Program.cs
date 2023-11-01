@@ -52,6 +52,18 @@ namespace LABA_2
             Console.WriteLine(cake.ToString());
             Candies candy = new Candies(5, 400.00M, 50, 100, "СВЕТИТСЯ И ПОЛЕЗНАЯ", 50, 200000000, 1, 3000);
             Console.WriteLine(candy.ToString());
+            Purchase purchase = new Purchase();
+            Console.WriteLine("ПОПКА") ;
+            purchase.AddGoods(flower);
+            purchase.AddGoods(clock);
+            purchase.AddProduct(cake);
+            purchase.AddProduct(candy);
+            foreach(var item in purchase)
+            {
+                Console.WriteLine(item.ToString());
+            }
+
+
         }
     }
 }
