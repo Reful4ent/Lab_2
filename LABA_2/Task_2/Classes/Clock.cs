@@ -19,8 +19,9 @@ namespace LABA_2.Task_2.Classes
             get => name;
             set
             {
-                if (!String.IsNullOrWhiteSpace(value))
-                    name=value;
+                if (!String.IsNullOrWhiteSpace(value) && value.Length <= 30)
+                    name = value;
+                else throw new ArgumentException("Введено пустое название или количество символов превысило максимальное значение, установлено название по умолчанию");
             }
         }
         public override decimal Price
@@ -30,6 +31,7 @@ namespace LABA_2.Task_2.Classes
             {
                 if (value >= 500 && value <= 500000)
                     price = value;
+                else throw new ArgumentException("Введенное значение не входит в диапазон, установлено значение по умолчанию!");
             }
         }
         public override int Quality 
@@ -39,10 +41,11 @@ namespace LABA_2.Task_2.Classes
             {
                 if (value >= 0 && value <= 100) 
                     quality = value;
+                else throw new ArgumentException("Введенное значение не входит в диапазон, установлено значение по умолчанию!");
             }
         }
 
-        public ClockType CType 
+        private ClockType CType 
         {
             get => clockType;
             set => clockType = value;
@@ -60,10 +63,6 @@ namespace LABA_2.Task_2.Classes
             CType = (ClockType)((type) % 3);
             ChangeFeatures(features);
         }
-
-        public override void ChangeName(string _name) => Name = String.IsNullOrWhiteSpace(_name) ? "Clock" : _name;
-        public override void ChangePrice(decimal _price) => Price = (_price < 500 || _price > 500000) ? 500 : _price;
-        public override void ChangeQuality(int _quality) => Quality = (_quality < 0 || _quality > 100) ? 100 : _quality;
         public void ChangeClockType(int num) => clockType = (ClockType)(num % 3);
         public void ChangeFeatures(params string[] feat)
         {

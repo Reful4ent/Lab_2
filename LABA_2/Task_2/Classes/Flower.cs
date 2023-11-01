@@ -20,8 +20,9 @@ namespace LABA_2.Task_2.Classes
             get => name;
             set
             {
-                if (!String.IsNullOrWhiteSpace(value))
+                if (!String.IsNullOrWhiteSpace(value) && value.Length <= 30)
                     name = value;
+                else throw new ArgumentException("Введено пустое название или количество символов превысило максимальное значение, установлено название по умолчанию");
             }
         }
         public override decimal Price
@@ -31,6 +32,7 @@ namespace LABA_2.Task_2.Classes
             {
                 if (value >= 500 && value <= 500000)
                     price = value;
+                else throw new ArgumentException("Введенное значение не входит в диапазон, установлено значение по умолчанию!");
             }
         }
         public override int Quality
@@ -40,9 +42,10 @@ namespace LABA_2.Task_2.Classes
             {
                 if (value >= 0 && value <= 100)
                     quality = value;
+                else throw new ArgumentException("Введенное значение не входит в диапазон, установлено значение по умолчанию!");
             }
         }
-        public Color Color
+        private Color Color
         {
             get => color;
             set => color = value;
@@ -53,23 +56,18 @@ namespace LABA_2.Task_2.Classes
             get => wrapper;
             set
             {
-                if (!String.IsNullOrWhiteSpace(value))
+                if (!String.IsNullOrWhiteSpace(value) && value.Length <= 30)
                     wrapper = value;
+                else throw new ArgumentException("Введено пустое название или количество символов превысило максимальное значение, установлено название по умолчанию");
             }
         }
-        
         public Flower() {; }
         public Flower(string name, decimal price, int quality, int color, string wrapper):base(name,price,quality)
         {
             Color = (Color)((color) % 3);
             Wrapper = wrapper;
         }
-
-        public override void ChangeName(string _name) => Name = String.IsNullOrWhiteSpace(_name) ? "Flower" : _name;
-        public override void ChangePrice(decimal _price) => Price = (_price < 100 || _price > 10000) ? 100 : _price;
-        public override void ChangeQuality(int _quality) => Quality = (_quality < 0 || _quality > 100) ? 100 : _quality;
         public void ChangeColor(int num) => color = (Color)(num % 3);
-        public void ChangeWrapper(string _wrapper) => Wrapper = String.IsNullOrWhiteSpace(_wrapper) ? "Without wrapper" : _wrapper;
         public override string ToString() => "\nFlower: \n" + base.ToString() + "\n Color: " + Color + "\n Wrapper: " + Wrapper;
     }
 }

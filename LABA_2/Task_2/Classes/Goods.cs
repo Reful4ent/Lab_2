@@ -19,10 +19,8 @@ namespace LABA_2.Task_2.Classes
             Quality = quality;
         }
 
-        public override string ToString() => " Name:" + Name + " \n Price: " + Price + " \n Quality: " + Quality;
-        public abstract void ChangeName(string _name);
-        public abstract void ChangePrice(decimal _price);
-        public abstract void ChangeQuality(int _quality);
+        public override string ToString() => " Name: " + Name + " \n Price: " + Price + " \n Quality: " + Quality;
+       
       
     }
 }

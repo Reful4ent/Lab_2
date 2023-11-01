@@ -41,10 +41,6 @@ namespace LABA_2.Task_2.Classes
                 s += p.ToString();
             return "\nPurchase:" + s;
         }
-        public override bool Equals(object? obj)
-        {
-            
-            return (obj is Goods || obj is Product) ? true : false;
-        }
+        
     }
 }

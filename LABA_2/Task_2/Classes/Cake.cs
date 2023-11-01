@@ -19,7 +19,7 @@ namespace LABA_2.Task_2.Classes
         int shelfLife = 2;
         int quality = 100;
 
-        public CakeType Name
+        private CakeType Name
         {
             get => name;
             set => name = value;
@@ -27,19 +27,34 @@ namespace LABA_2.Task_2.Classes
         public override string DietaryType 
         {
             get => deitaryType;
-            set => deitaryType=value;
+            set
+            {
+                if (!String.IsNullOrWhiteSpace(value) && value.Length <= 20)
+                    deitaryType = value;
+                else throw new ArgumentException("Введено пустое название или количество символов превысило максимальное значение, установлено название по умолчанию");
+            }
         }
         public override uint ProcOfSugar
         {
             get => procOfSugar;
-            set=> procOfSugar=value;
+            set
+            {
+                if (value >= 0 && value <= 100)
+                    procOfSugar = value;
+                else throw new ArgumentException("Введенное значение не входит в диапазон, установлено значение по умолчанию!");
+            }
         }
         public override int Calories
         {
             get => calories;
-            set => calories=value;
+            set
+            {
+                if (value >= 0 && value <= 10000)
+                    calories = value;
+                else throw new ArgumentException("Введенное значение не входит в диапазон, установлено значение по умолчанию!");
+            }
         }
-        public override PastryType PastryType
+        protected override PastryType PastryType
         {
             get => pastryType;
             set => pastryType = value;
@@ -47,22 +62,43 @@ namespace LABA_2.Task_2.Classes
         public override uint EnergyValue
         {
             get => energyValue;
-            set => energyValue = value;
+            set
+            {
+                if (value >= 1000 && value <= 30000)
+                    energyValue = value;
+                else throw new ArgumentException("Введенное значение не входит в диапазон, установлено значение по умолчанию!");
+            }
         }
         public override decimal Price
         {
             get => price;
-            set=> price= value;
+            set
+            {
+                if (value >= 250.00M && value <= 5000.00M)
+                    price = value;
+                else throw new ArgumentException("Введенное значение не входит в диапазон, установлено значение по умолчанию!");
+            }
+
         }
         public override int ShelfLife
         {
             get => shelfLife;
-            set => shelfLife = value;
+            set
+            {
+                if (value >= 0 && value <= 365)
+                    shelfLife = value;
+                else throw new ArgumentException("Введенное значение не входит в диапазон, установлено значение по умолчанию!");
+            }
         }
         public override int Quality
         {
             get => quality;
-            set => quality = value;
+            set
+            {
+                if (value >= 0 && value <= 100)
+                    quality = value;
+                else throw new ArgumentException("Введенное значение не входит в диапазон, установлено значение по умолчанию!");
+            }
         }
 
         public Cake() {; }
@@ -70,14 +106,8 @@ namespace LABA_2.Task_2.Classes
         {
             Name = (CakeType)(name % 6);
         }
-        public override void ChangeCalories(int _calories) => Calories = (_calories>=0 && _calories <= 10000) ? _calories : 500;
-        public override void ChangeDietaryType(string _dietaryType) => DietaryType = (String.IsNullOrWhiteSpace(_dietaryType)) ? "Не диетическая" : _dietaryType;
-        public override void ChangeEnergyValue(uint _energyValue) => EnergyValue = (_energyValue < 1000 || _energyValue > 30000) ? 2000 : _energyValue;
-        public override void ChangePrice(decimal _price) => Price = (_price < 250.00M || _price > 5000.00M) ? 500.00M : _price;
-        public override void ChangeProcOfSugar(uint _procOfSugar) => ProcOfSugar = (_procOfSugar >= 0 && _procOfSugar <= 100) ? _procOfSugar : 60;
-        public override void ChangePType(int num) => PastryType = (PastryType)(num % 2);
-        public override void ChangeQuality(int _quality) => Quality = (_quality>=0&&_quality<=100) ? _quality : 100;
-        public override void ChangeShelfLife(int _shelfLife) => ShelfLife = (_shelfLife < 0 || _shelfLife > 365) ? 2 : _shelfLife;
+        public void ChangePType(int num) => PastryType = (PastryType)(num % 2);
+        public void ChangeName(int name)=> Name = (CakeType)(name % 6);
         public override string ToString() => "\nPastry: \n" + " Name: " + Name + base.ToString();
     }
 }
