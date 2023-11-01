@@ -25,7 +25,6 @@ namespace LABA_2.Task_2.Classes
             PastryType = (PastryType)(pType % 2);
             EnergyValue = energyValue;
         }
-
         public abstract void ChangeDietaryType(string _dietaryType);
         public abstract void ChangeProcOfSugar(uint _procOfSugar);
         public abstract void ChangeCalories(int _calories);

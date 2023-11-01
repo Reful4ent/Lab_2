@@ -50,6 +50,8 @@ namespace LABA_2
             Console.WriteLine(flower.ToString());
             Cake cake = new Cake();
             Console.WriteLine(cake.ToString());
+            Candies candy = new Candies(5, 400.00M, 50, 100, "СВЕТИТСЯ И ПОЛЕЗНАЯ", 50, 200000000, 1, 3000);
+            Console.WriteLine(candy.ToString());
         }
     }
 }

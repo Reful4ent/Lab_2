@@ -70,50 +70,16 @@ namespace LABA_2.Task_2.Classes
         {
             Name = (CakeType)(name % 6);
         }
-
-        public override void ChangeCalories(int _calories)
-        {
-            
-        }
-
-        public override void ChangeDietaryType(string _dietaryType)
-        {
-           
-        }
-
-        public override void ChangeEnergyValue(uint _energyValue)
-        {
-            
-        }
-
-        public override void ChangePrice(decimal _price)
-        {
-            
-        }
-
-        public override void ChangeProcOfSugar(uint _procOfSugar)
-        {
-            
-        }
-
-        public override void ChangePType(int num)
-        {
-            
-        }
-
-        public override void ChangeQuality(int _quality)
-        {
-            
-        }
-
-        public override void ChangeShelfLife(int _shelfLife)
-        {
-            
-        }
-        public override string ToString()
-        {
-            return "Pastry: \n" + " Name: " + Name + base.ToString();
-        }
+        public override void ChangeCalories(int _calories) => Calories = (_calories>=0 && _calories <= 10000) ? _calories : 500;
+        public override void ChangeDietaryType(string _dietaryType) => DietaryType = (String.IsNullOrWhiteSpace(_dietaryType)) ? "Не диетическая" : _dietaryType;
+        public override void ChangeEnergyValue(uint _energyValue) => EnergyValue = (_energyValue < 1000 || _energyValue > 30000) ? 2000 : _energyValue;
+        public override void ChangePrice(decimal _price) => Price = (_price < 250.00M || _price > 5000.00M) ? 500.00M : _price;
+        public override void ChangeProcOfSugar(uint _procOfSugar) => ProcOfSugar = (_procOfSugar >= 0 && _procOfSugar <= 100) ? _procOfSugar : 60;
+        public override void ChangePType(int num) => PastryType = (PastryType)(num % 2);
+        public override void ChangeQuality(int _quality) => Quality = (_quality>=0&&_quality<=100) ? _quality : 100;
+        public override void ChangeShelfLife(int _shelfLife) => ShelfLife = (_shelfLife < 0 || _shelfLife > 365) ? 2 : _shelfLife;
+        public override string ToString() => "Pastry: \n" + " Name: " + Name + base.ToString();
     }
-
 }
+
+
