@@ -54,10 +54,10 @@ namespace LABA_2
             Console.WriteLine(candy.ToString());
             Purchase purchase = new Purchase();
             Console.WriteLine("ПОПКА") ;
-            purchase.AddGoods(flower);
-            purchase.AddGoods(clock);
-            purchase.AddProduct(cake);
-            purchase.AddProduct(candy);
+            purchase.AddPurchase(flower);
+            purchase.AddPurchase(clock);
+            purchase.AddPurchase(cake);
+            purchase.AddPurchase(candy);
             foreach(var item in purchase)
             {
                 Console.WriteLine(item.ToString());

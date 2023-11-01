@@ -7,18 +7,12 @@ using System.Threading.Tasks;
 
 namespace LABA_2.Task_2.Classes
 {
-    public class Purchase : IEnumerable<Goods>,IEnumerable<Product>
+    public class Purchase /*: IEnumerable<object>*/
     {
-        List<Goods> goodsList=new();
-        List<Product> productList=new();
+        List<object> purchaseList=new();
         public Purchase() {; }
-        
-        public void AddGoods(Goods p) => goodsList.Add(p);
-        public void AddProduct(Product p) => productList.Add(p);
-        public IEnumerator<Goods> GetEnumerator() => goodsList.GetEnumerator();
-        IEnumerator<Product> IEnumerable<Product>.GetEnumerator()=> productList.GetEnumerator();
-        IEnumerator IEnumerable.GetEnumerator() =>GetEnumerator();
-
-       
+        public void AddPurchase(object p) => purchaseList.Add(p);
+        //public IEnumerator<object> GetEnumerator()=>purchaseList.GetEnumerator();
+        //IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }
