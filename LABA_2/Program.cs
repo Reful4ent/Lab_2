@@ -17,32 +17,34 @@ namespace LABA_2
         static void Main(string[] args)
         {
             
-            Queue_t<int> p = new();
-            Queue_t<int> q = new();
-            q += 123;
-            q += 1;
-            q += 5;
-            q += 4;
-            q--;
-            if (q)
-                Console.WriteLine("Тут пусто");
-            else Console.WriteLine("Не пусто");
-            p = p < q;
-            if (p)
-                Console.WriteLine("Тут пусто");
-            else Console.WriteLine("Не пусто");
-            int i = (int)q;
-            Console.WriteLine(i);
-            q.Print();
-            p.Print();
-            string s = "popachka.c.231";
-            string e = "popachka";
-            string x = ".op";
-            Console.WriteLine("Если в переменной нет точки, то результат возврата -1");
-            int y = s.CheckIndex();
-            int u = e.CheckIndex();
-            int j = x.CheckIndex();
-            Console.WriteLine("s : {0}, e: {1}, x : {2}",y ,u,j);
+            //Queue_t<int> p = new();
+            //Queue_t<int> q = new();
+            //q += 123;
+            //q += 1;
+            //q += 5;
+            //q += 4;
+            //q--;
+            //if (q)
+            //    Console.WriteLine("Тут пусто");
+            //else Console.WriteLine("Не пусто");
+            //p = p < q;
+            //if (p)
+            //    Console.WriteLine("Тут пусто");
+            //else Console.WriteLine("Не пусто");
+            //int i = (int)q;
+            //Console.WriteLine(i);
+            //q.Print();
+            //p.Print();
+            //string s = "popachka.c.231";
+            //string e = "popachka";
+            //string x = ".op";
+            //Console.WriteLine("Если в переменной нет точки, то результат возврата -1");
+            //int y = s.CheckIndex();
+            //int u = e.CheckIndex();
+            //int j = x.CheckIndex();
+            //Console.WriteLine("s : {0}, e: {1}, x : {2}",y ,u,j);
+
+
 
             Clock clock= new Clock("ПИДОРАС",12000.00M,50,2,"OLPAKA","TORTIK","POPASIK","ЭССТРАЙХ");
             Console.WriteLine(clock.ToString());
@@ -52,8 +54,10 @@ namespace LABA_2
             Console.WriteLine(cake.ToString());
             Candies candy = new Candies(5, 400.00M, 50, 100, "СВЕТИТСЯ И ПОЛЕЗНАЯ", 50, 200000000, 1, 3000);
             Console.WriteLine(candy.ToString());
+
             Purchase purchase = new Purchase();
-            Console.WriteLine("ПОПКА") ;
+            Console.WriteLine("ПОПКА");
+            purchase.AddPurchase(23);
             purchase.AddPurchase(flower);
             purchase.AddPurchase(clock);
             purchase.AddPurchase(cake);
@@ -62,6 +66,8 @@ namespace LABA_2
             {
                 Console.WriteLine(item.ToString());
             }
+            Console.WriteLine(purchase.ToString());
+            Console.WriteLine(purchase.Current.Equals(purchase.Current));
 
 
         }

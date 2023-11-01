@@ -83,6 +83,6 @@ namespace LABA_2.Task_2.Classes
         public override void ChangePType(int num) => PastryType = (PastryType)(num % 2);
         public override void ChangeQuality(int _quality) => Quality = (_quality >= 0 && _quality <= 100) ? _quality : 100;
         public override void ChangeShelfLife(int _shelfLife) => ShelfLife = (_shelfLife < 0 || _shelfLife > 730) ? 20 : _shelfLife;
-        public override string ToString() => "Pastry: \n" + " Name: " + Name + base.ToString();
+        public override string ToString() => "\nPastry: \n" + " Name: " + Name + base.ToString();
     }
 }

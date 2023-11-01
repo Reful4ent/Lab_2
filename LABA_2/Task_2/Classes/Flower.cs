@@ -70,6 +70,6 @@ namespace LABA_2.Task_2.Classes
         public override void ChangeQuality(int _quality) => Quality = (_quality < 0 || _quality > 100) ? 100 : _quality;
         public void ChangeColor(int num) => color = (Color)(num % 3);
         public void ChangeWrapper(string _wrapper) => Wrapper = String.IsNullOrWhiteSpace(_wrapper) ? "Without wrapper" : _wrapper;
-        public override string ToString() => "Flower: \n" + base.ToString() + "\n Color: " + Color + "\n Wrapper: " + Wrapper;
+        public override string ToString() => "\nFlower: \n" + base.ToString() + "\n Color: " + Color + "\n Wrapper: " + Wrapper;
     }
 }

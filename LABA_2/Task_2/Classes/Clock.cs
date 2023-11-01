@@ -75,7 +75,7 @@ namespace LABA_2.Task_2.Classes
             string s = null;
             foreach (var item in Features)
                 s += item + " ";
-            return "Clock: \n"+ base.ToString() + "\n Type: " + CType + "\n Features: " + s;
+            return "\nClock: \n"+ base.ToString() + "\n Type: " + CType + "\n Features: " + s;
         }
 
     }
