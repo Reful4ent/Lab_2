@@ -107,7 +107,7 @@ namespace LABA_2.Task_2.Classes
             Name = (CakeType)(name % 6);
         }
         public void ChangePType(int num) => PastryType = (PastryType)(num % 2);
-        public void ChangeName(int name)=> Name = (CakeType)(name % 6);
+        public override void ChangeName(int name)=> Name = (CakeType)(name % 6);
         public override string ToString() => "\nPastry: \n" + " Name: " + Name + base.ToString();
     }
 }

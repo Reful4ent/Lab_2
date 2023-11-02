@@ -25,6 +25,7 @@ namespace LABA_2.Task_2.Classes
             PastryType = (PastryType)(pType % 2);
             EnergyValue = energyValue;
         }
+        public abstract void ChangeName(int name);
         public override string ToString() => "\n Pastry type: " + PastryType + base.ToString() + "\n Dietary type: " + DietaryType + "\n Procent of sugar: " + ProcOfSugar + "\n Calories: " + Calories + "\n Energy value: " + EnergyValue;
         
 

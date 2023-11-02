@@ -59,9 +59,8 @@ namespace LABA_2
             Candies candy = new Candies(5, 400.00M, 50, 100, "Светится в темноте!", 50, 200000000, 1, 3000);
             Candies candy_2 = new Candies(1, 800.00M, 100, 56, "Вкусная и сладкая!", 25, 300, 1, 2300);
             Cake cake_2 = new Cake(2, 759.99M, 120, 89, "Вредный до жути!", 100, 800, 2, 4000);
-
             Purchase purchase = new Purchase();
-            //purchase.AddPurchase(23);
+            purchase.AddPurchase(23);
             purchase.AddPurchase(flower);
             purchase.AddPurchase(cake);
             purchase.AddPurchase(candy);
@@ -72,8 +71,11 @@ namespace LABA_2
             //{
             //    Console.WriteLine(item.ToString());
             //}
+            //purchase.Dispose();
+            foreach(var purchaseItem in purchase)
+                Console.WriteLine(purchase.Equals(purchaseItem));
             Console.WriteLine(purchase.ToString());
-            //Console.WriteLine(purchase.Current.Equals(purchase.Current));
+            
         }
     }
 }
