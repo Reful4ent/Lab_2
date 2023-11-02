@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LABA_2.Task_2.Classes
 {
-    public abstract class Goods
+    public abstract class Goods 
     {
         public abstract string Name { get; set; }
         public abstract decimal Price { get; set; }

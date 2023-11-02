@@ -9,7 +9,7 @@ namespace LABA_2.Task_2.Classes
 {
     public class Purchase : IEnumerable<object>, IEnumerator<object>
     {
-        List<object> purchaseList=new();
+        List<object> purchaseList = new();
         int index = 0;
         public Purchase() {; }
         //переопределение методов от интерфейсов IEnumerable<T> и IEnumerator<T>
@@ -41,6 +41,38 @@ namespace LABA_2.Task_2.Classes
                 s += p.ToString();
             return "\nPurchase:\n" + s;
         }
+
+        public void WarkingTask()
+        {
+            foreach (var item in purchaseList)
+            {
+                switch (item)
+                {
+                    case Clock c:
+                        c.ChangeClockType(3);
+                        c.ChangeFeatures("Самая низкая цена на данное устройство!");
+                        c.Quality = 40;
+                        Console.WriteLine(c.ToString());
+                        break;
+                    case Flower f:
+                        f.ChangeColor(2);
+                        f.Wrapper = "Красный бантик!";
+                        Console.WriteLine(f.ToString());
+                        break;
+                    case Cake c:
+                        c.ChangeName(4);
+                        c.ProcOfSugar = 30;
+                        Console.WriteLine(c.ToString());
+                        break;
+                    case Candies cs:
+                        cs.ChangeName(3);
+                        cs.Calories = 731;
+                        Console.WriteLine(cs.ToString());
+                        break;
+                }
+            }
+        }
+
         //удаляет из списка обьекты не относящиеся классам Product или Goods
         public void RemoveUnneces()
         {

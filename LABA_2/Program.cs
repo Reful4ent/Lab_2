@@ -78,23 +78,26 @@ namespace LABA_2
             purchase.AddPurchase(candy_2);
             purchase.AddPurchase("dsfsdfd");
             
+
+            
             //Проверка на наличие мусора ( неверно введенных данных ) 
             foreach(var purchaseItem in purchase)
                 Console.WriteLine(purchase.Equals(purchaseItem));
 
             //Удаление ненужных элементов
             purchase.RemoveUnneces();
-
             //Вывод покупки на консоль
             Console.WriteLine(purchase.ToString());
+
+            //6 задание
+            purchase.WarkingTask();
 
             //Очищение покупки
             purchase.Dispose();
             Console.WriteLine(purchase.ToString());
+            
 
-            //Задание 6
-            object[] purchase_array = { cake_2, flower, candy, candy_2, clock_2 };
-            Console.WriteLine(purchase_array[0].ToString);
+
 
         }
     }
