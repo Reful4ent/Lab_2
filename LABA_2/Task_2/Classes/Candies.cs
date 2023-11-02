@@ -28,7 +28,7 @@ namespace LABA_2.Task_2.Classes
             get => deitaryType;
             set
             {
-                if (!String.IsNullOrWhiteSpace(value) && value.Length <= 20)
+                if ((!String.IsNullOrWhiteSpace(value) && value.Length <=20) || value == "Светится в темноте! Огромное число каллорий, возможно в вашей конфете содержится ИЗОТОП УРАНА-235!!!!!!")
                     deitaryType = value;
                 else throw new ArgumentException("Введено пустое название или количество символов превысило максимальное значение, установлено название по умолчанию");
             }
@@ -50,7 +50,7 @@ namespace LABA_2.Task_2.Classes
             {
                 if (value == 200000000)
                 {
-                    Console.WriteLine("Огромное число каллорий, возможно в вашей конфете содержится ИЗОТОП УРАНА-235!!!!!!");
+                    DietaryType += (" Огромное число каллорий, возможно в вашей конфете содержится ИЗОТОП УРАНА-235!!!!!!");
                     calories = value;
                 }
                 else if (value >= 0 && value <= 10000)

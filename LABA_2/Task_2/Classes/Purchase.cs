@@ -32,14 +32,26 @@ namespace LABA_2.Task_2.Classes
 
         //переопределение методов от класса object
         public override bool Equals(object? obj) => (obj is Product || obj is Goods) ? true : false; 
-        public override int GetHashCode() => index;
+        public override int GetHashCode() => purchaseList[index].GetHashCode();
         public override string ToString()
         {
             if (purchaseList.Count == 0) return "Список пуст!";
             string s = null;
-            foreach (object p in purchaseList)
+            foreach (var p in purchaseList)
                 s += p.ToString();
-            return "\nPurchase:" + s;
+            return "\nPurchase:\n" + s;
+        }
+        //удаляет из списка обьекты не относящиеся классам Product или Goods
+        public void RemoveUnneces()
+        {
+            for (int i = 0; i < purchaseList.Count; i++)
+            {
+                if (!Equals(purchaseList[i]))
+                {
+                    purchaseList.Remove(purchaseList[i]);
+                    i -= 1;
+                }
+            }
         }
 
     }
