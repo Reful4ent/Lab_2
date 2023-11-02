@@ -41,7 +41,7 @@ namespace LABA_2.Task_2.Classes
                 s += p.ToString();
             return "\nPurchase:\n" + s;
         }
-
+        //6 задание
         public void WarkingTask()
         {
             foreach (var item in purchaseList)
