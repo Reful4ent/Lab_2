@@ -92,7 +92,9 @@ namespace LABA_2
             purchase.Dispose();
             Console.WriteLine(purchase.ToString());
 
-
+            //Задание 6
+            object[] purchase_array = { cake_2, flower, candy, candy_2, clock_2 };
+            Console.WriteLine(purchase_array[0].ToString);
 
         }
     }
