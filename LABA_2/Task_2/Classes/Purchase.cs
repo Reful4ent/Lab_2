@@ -13,7 +13,13 @@ namespace LABA_2.Task_2.Classes
         int index = 0;
         public Purchase() {; }
         //переопределение методов от интерфейсов IEnumerable<T> и IEnumerator<T>
-        public void AddPurchase(object p) => purchaseList.Add(p);
+        //public void AddPurchase(object p) => purchaseList.Add(p);
+        public void AddPurchase(object p)
+        {
+            if (Equals(p))
+                purchaseList.Add(p);
+            else Console.WriteLine("Неверно передан обьект!");
+        }
         public IEnumerator<object> GetEnumerator() => purchaseList.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
         public object Current => purchaseList[index];
@@ -72,19 +78,5 @@ namespace LABA_2.Task_2.Classes
                 }
             }
         }
-
-        //удаляет из списка обьекты не относящиеся классам Product или Goods
-        public void RemoveUnneces()
-        {
-            for (int i = 0; i < purchaseList.Count; i++)
-            {
-                if (!Equals(purchaseList[i]))
-                {
-                    purchaseList.Remove(purchaseList[i]);
-                    i -= 1;
-                }
-            }
-        }
-
     }
 }
