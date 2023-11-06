@@ -4,25 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LABA_2.Task_2.Enums;
+using LABA_2.Task_2.Interfaces;
 
 namespace LABA_2.Task_2.Classes
 {
-    public class Clock : Goods
+    public class Clock : Goods, IShowClasses
     {
-        string name = "Clock";
+        WatchesType name = WatchesType.MiBand;
         decimal price = 500.0M;
         int quality = 100;
         ClockType clockType = ClockType.Wristwatches;
         List<string> features = new();
-        public override string Name 
+        private WatchesType Name 
         {
             get => name;
-            set
-            {
-                if (!String.IsNullOrWhiteSpace(value) && value.Length <= 30)
-                    name = value;
-                else throw new ArgumentException("Введено пустое название или количество символов превысило максимальное значение, установлено название по умолчанию");
-            }
+            set => name = value;
         }
         public override decimal Price
         {
@@ -58,8 +54,9 @@ namespace LABA_2.Task_2.Classes
 
         public Clock() {; }
 
-        public Clock(string name, decimal price, int quality, int type, params string[] features) : base(name, price, quality)
+        public Clock(int num, decimal price, int quality, int type, params string[] features) : base( price, quality)
         {
+            Name = (WatchesType)(num % 7);
             CType = (ClockType)((type) % 3);
             ChangeFeatures(features);
         }
@@ -74,8 +71,9 @@ namespace LABA_2.Task_2.Classes
             string s = null;
             foreach (var item in Features)
                 s += item + " ";
-            return "\nClock: \n"+ base.ToString() + "\n Type: " + CType + "\n Features: " + s;
+            return "\nClock: \n"+" Name: " + Name + base.ToString() + "\n Type: " + CType + "\n Features: " + s;
         }
 
+        public void ChangeName(int num) => Name = (WatchesType)(num % 7);
     }
 }

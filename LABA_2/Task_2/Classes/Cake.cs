@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LABA_2.Task_2.Interfaces;
 
 namespace LABA_2.Task_2.Classes
 {
-    public sealed class Cake : Pastry
+    public sealed class Cake : Pastry, IShowClasses
     {
         CakeType name = CakeType.Prague;
         string deitaryType = "Не диетический";
@@ -107,7 +108,7 @@ namespace LABA_2.Task_2.Classes
             Name = (CakeType)(name % 6);
         }
         public void ChangePType(int num) => PastryType = (PastryType)(num % 2);
-        public override void ChangeName(int name)=> Name = (CakeType)(name % 6);
+        public override void ChangeName(int num)=> Name = (CakeType)(num % 6);
         public override string ToString() => "\nPastry: \n" + " Name: " + Name + base.ToString();
     }
 }

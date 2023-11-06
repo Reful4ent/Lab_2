@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace LABA_2.Task_2.Enums
 {
-    internal class FlowerType
+    public enum FlowerType
     {
+        Chrysanthemum,
+        Rose,
+        Tulip,
+        Mac,
+        Magic_Flower,
+        Geranium,
+        Dahlias,
+        Chamomile
     }
 }

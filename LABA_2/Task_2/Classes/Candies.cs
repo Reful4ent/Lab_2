@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LABA_2.Task_2.Interfaces;
 
 namespace LABA_2.Task_2.Classes
 {
-    public class Candies : Pastry
+    public class Candies : Pastry, IShowClasses
     {
         CandyType name = CandyType.Chocolate;
         string deitaryType = "Не диетические";

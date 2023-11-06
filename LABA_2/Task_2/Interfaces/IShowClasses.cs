@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace LABA_2.Task_2.Interfaces
 {
-    internal interface IShowClasses
+    public interface IShowClasses
     {
+        public void ChangeName(int num);
+        public string ToString();
     }
 }

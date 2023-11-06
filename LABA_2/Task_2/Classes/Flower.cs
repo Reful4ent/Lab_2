@@ -4,26 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LABA_2.Task_2.Enums;
+using LABA_2.Task_2.Interfaces;
 
 namespace LABA_2.Task_2.Classes
 {
-    public class Flower : Goods
+    public class Flower : Goods, IShowClasses
     {
-        string name = "Flower";
+        FlowerType name = FlowerType.Chrysanthemum; 
         decimal price = 100.0M;
         int quality = 100;
         Color color = Color.Red;
         string wrapper = "Without wrapper";
 
-        public override string Name
+        private FlowerType Name
         {
             get => name;
-            set
-            {
-                if (!String.IsNullOrWhiteSpace(value) && value.Length <= 30)
-                    name = value;
-                else throw new ArgumentException("Введено пустое название или количество символов превысило максимальное значение, установлено название по умолчанию");
-            }
+            set=> name = value;
         }
         public override decimal Price
         {
@@ -62,12 +58,15 @@ namespace LABA_2.Task_2.Classes
             }
         }
         public Flower() {; }
-        public Flower(string name, decimal price, int quality, int color, string wrapper):base(name,price,quality)
+        public Flower(int name, decimal price, int quality, int color, string wrapper):base(price,quality)
         {
+            Name = (FlowerType)(name % 8 );
             Color = (Color)((color) % 3);
             Wrapper = wrapper;
         }
         public void ChangeColor(int num) => color = (Color)(num % 3);
-        public override string ToString() => "\nFlower: \n" + base.ToString() + "\n Color: " + Color + "\n Wrapper: " + Wrapper;
+        public override string ToString() => "\nFlower: \n" + " Name: " + Name + base.ToString() + "\n Color: " + Color + "\n Wrapper: " + Wrapper;
+
+        public void ChangeName(int num) => Name = (FlowerType)(num % 8);
     }
 }

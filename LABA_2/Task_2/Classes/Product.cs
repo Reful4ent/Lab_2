@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LABA_2.Task_2.Enums;
+using LABA_2.Task_2.Interfaces;
 
 namespace LABA_2.Task_2.Classes
 {
